@@ -10,6 +10,15 @@ using System.Windows.Forms;
 
 namespace Calculator_Mahmoud
 {
+    // Test Cases:
+    // Addition
+    // Subtraction
+    // Multiplication
+    // Division
+    // Continous operation: (operation can be added to output)
+    // Clear entry: (Clears second entry #, not first entry # or operator)
+    // Clear: (Clears all entries and operators)
+
     public partial class Form1 : Form
     {
         // Global variables for calculator logic
@@ -137,12 +146,16 @@ namespace Calculator_Mahmoud
 
         private void scientificToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Set form width and textbox width 
             this.Width = 350;
             textBox_Output.Width = 305;
         }
 
+        // Possible Feature: strip menu item for currency converter?
+
         private void scientificOperator_click(object sender, EventArgs e)
         {
+            // Similar concept to operator_click(), but for scientific buttons
             Button button = (Button)sender;
             String x = "";
             scientificOperation = button.Text;
@@ -193,7 +206,12 @@ namespace Calculator_Mahmoud
                 outputValue = decimal.Parse(textBox_Output.Text);
                 scientificOperation = "";
                 operationInputted = true;
+
+                // Feature fix: limit decimal places in output or put in scientific notation
             }
         }
+
+        // Possible feature: Event for currency conversion?
+
     }
 }
